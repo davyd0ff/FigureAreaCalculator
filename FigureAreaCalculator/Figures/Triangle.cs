@@ -2,7 +2,7 @@
 
 namespace FigureAreaCalculator.Figures;
 
-internal class Triangle : IFigure, ITriangle
+public class Triangle : IFigure, ITriangle
 {
   private readonly double _a;
   private readonly double _b;
