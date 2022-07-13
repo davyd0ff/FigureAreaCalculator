@@ -25,7 +25,7 @@ go
 
 if Object_id('dbo.Categories') is not null begin Drop table [Categories] end
 go 
-Create table Categories (
+Create table [Categories] (
   [Id] int identity(1,1) not null constraint PK_CategoryId primary key,
   [Name] nvarchar(50) not null
 )
@@ -49,5 +49,5 @@ Insert into [Categories] ([Name])
   Values ('Category1'), ('Category2'), ('Category3')
 go
 Insert into [Intermediate_Product_Category] ([ProductId], [CategoryId])
-  Values ((select Id from Products where Name = 'Product1'), (select Id from Categories where [Name] = 'Category1')),
-         ((select Id from Products where Name = 'Product3'), (select Id from Categories where [Name] = 'Category3'))
+  Values ((select Id from Products where [Name] = 'Product1'), (select Id from Categories where [Name] = 'Category1')),
+         ((select Id from Products where [Name] = 'Product3'), (select Id from Categories where [Name] = 'Category3'))
