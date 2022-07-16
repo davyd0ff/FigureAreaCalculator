@@ -1,6 +1,6 @@
 ﻿namespace FigureAreaCalculator.Interfaces;
 
-internal interface IFigure
+public interface IFigure
 {
   double GetArea();
 }
